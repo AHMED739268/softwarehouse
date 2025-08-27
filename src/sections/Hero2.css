@@ -1,0 +1,71 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: #b259ff;
+  color: white;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+}
+
+.hero-content {
+  flex: 1;
+  padding-right: 4rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+  color: #4b0082;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.launch-btn {
+  padding: 0.8rem 1.8rem;
+  background-color: #4b0082;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.launch-btn:hover {
+  background-color: #6a00c0;
+}
+
+.hero-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+  transform: translateY(0);
+  will-change: opacity;
+}
+.hero-image {
+  /* ... existing styles */
+  transform: translateY(0);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Use JavaScript to animate transform too */

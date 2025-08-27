@@ -1,0 +1,184 @@
+{
+  "nav": {
+    "solutions": "Solutions",
+    "pricing": "Pricing",
+    "why": "Why Zid?",
+    "how": "How we help",
+    "enterprise": "Enterprise",
+    "support": "Support",
+    "login": "Log in",
+    "create": "Create your store",
+    "lang": "\u0639\u0631\u0628\u064a"
+  },
+  "hero": {
+    "title": "The trusted, all\u2011in\u2011one commerce platform",
+    "desc": "Build a professional store and grow with payments, shipping, financing, and marketing\u2014all in one.",
+    "cta": "Get started",
+    "altcta": "Try for free"
+  },
+  "partners": {
+    "title": "Empowering Businesses of",
+    "Worldwide": " All Shapes and Sizes"
+  },
+  "features": {
+    "title": "Platform features",
+    "items": [
+      {
+        "t": "Secure payments",
+        "d": "Multiple easy payment options."
+      },
+      {
+        "t": "Integrated shipping",
+        "d": "Connect with top carriers."
+      },
+      {
+        "t": "Flexible financing",
+        "d": "Funding options to scale."
+      },
+      {
+        "t": "Effective marketing",
+        "d": "Tools and campaigns to sell more."
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Plans & Pricing",
+    "m": "Monthly",
+    "y": "Yearly (save)",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "$29",
+        "feat": [
+          "Unlimited products",
+          "Pro themes",
+          "Payment gateways"
+        ]
+      },
+      {
+        "name": "Pro",
+        "price": "$69",
+        "feat": [
+          "Everything in Starter",
+          "Advanced reports",
+          "Shipping integrations"
+        ]
+      },
+      {
+        "name": "Business",
+        "price": "Custom",
+        "feat": [
+          "Success manager",
+          "SLA",
+          "Custom solutions"
+        ]
+      }
+    ]
+  },
+  "cta": {
+    "title": "Start your journey today",
+    "desc": "Try the platform free and launch in minutes.",
+    "btn": "Create your store"
+  },
+
+  "pages": {
+    "about": "About",
+    "features": "Features",
+    "pricing": "Pricing",
+    "contact": "Contact"
+  },
+  "featuress": [
+    {
+      "key": "visionary",
+      "title": "For the Visionaries with Big Ideas",
+      "description": "Got a million-dollar idea? Let’s make it happen. No tech skills needed—bring your passion, and we’ll support you every step of the way."
+    },
+    {
+      "key": "local",
+      "title": "For the Local Heroes",
+      "description": "Ready to take your physical store to the next level? Whether you're running a chic boutique, a buzzing bazaar stall, or a pop-up shop, we've got the secret sauce for your success."
+    },
+    {
+      "key": "pioneer",
+      "title": "For the Online Pioneers",
+      "description": "Launch and grow your e-commerce empire with our digital toolbox. World domination? Let's start with a great online store."
+    },
+    {
+      "key": "superstar",
+      "title": "For the Scaling Superstars",
+      "description": "Ready to leave the competition in the dust? Our advanced tools and expert support will be your rocket fuel at every stage."
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Ahmed Al-Subaie",
+      "company": "CMXA",
+      "rating": 2,
+      "logo": "/images/for-visionaries.jpg",
+      "avatar": "/images/for-visionaries.jpg",
+      "review": "Zid made many things easier and created communities and integrated solutions that make you not need any other platform. The Komksa store is stable, and we haven't faced any technical issues. We benefited from all of Zid's services, such as simple payment collection with Zid Pay, shipping to the Gulf countries with Zid Ship, sales analytics, and adding discounts and promo codes."
+    },
+    {
+      "name": "Dr. Khaled Al-Sultan",
+      "company": "Sama Pharma",
+      "rating": 5,
+      "logo": "/images/for-visionaries.jpg",
+      "avatar": "/images/for-visionaries.jpg",
+      "review": "We faced technical issues like payment processing failures, server instability, especially during promotions and discounts. Once we switched to Zid, all these problems disappeared, and we were able to focus on what really matters—operations and business."
+    },
+    {
+      "name": "Ahmed Al-Subaie",
+      "company": "CMXA",
+      "rating": 2,
+      "logo": "/images/for-visionaries.jpg",
+      "avatar": "/images/for-visionaries.jpg",
+      "review": "Zid made many things easier and created communities and integrated solutions that make you not need any other platform. The Komksa store is stable, and we haven't faced any technical issues. We benefited from all of Zid's services, such as simple payment collection with Zid Pay, shipping to the Gulf countries with Zid Ship, sales analytics, and adding discounts and promo codes."
+    },
+    {
+      "name": "Dr. Khaled Al-Sultan",
+      "company": "Sama Pharma",
+      "rating": 5,
+      "logo": "/images/for-visionaries.jpg",
+      "avatar": "/images/for-visionaries.jpg",
+      "review": "We faced technical issues like payment processing failures, server instability, especially during promotions and discounts. Once we switched to Zid, all these problems disappeared, and we were able to focus on what really matters—operations and business."
+    },
+    {
+      "name": "Ahmed Al-Subaie",
+      "company": "CMXA",
+      "rating": 2,
+      "logo": "/images/for-visionaries.jpg",
+      "avatar": "/images/for-visionaries.jpg",
+      "review": "Zid made many things easier and created communities and integrated solutions that make you not need any other platform. The Komksa store is stable, and we haven't faced any technical issues. We benefited from all of Zid's services, such as simple payment collection with Zid Pay, shipping to the Gulf countries with Zid Ship, sales analytics, and adding discounts and promo codes."
+    },
+    {
+      "name": "Dr. Khaled Al-Sultan",
+      "company": "Sama Pharma",
+      "rating": 5,
+      "logo": "/images/for-visionaries.jpg",
+      "avatar": "/images/for-visionaries.jpg",
+      "review": "We faced technical issues like payment processing failures, server instability, especially during promotions and discounts. Once we switched to Zid, all these problems disappeared, and we were able to focus on what really matters—operations and business."
+    }
+  ],
+  "supportSection": {
+    "title": "EVERY STEP OF THE WAY, ZID IS WITH YOU",
+    "subtitle": "Entrepreneurship can be a wild ride. We've built a community where support, expertise, and success go hand in hand.",
+    "buttonText": "Start Your Journey with Zid",
+    "features": [
+      {
+        "icon": "feature1",
+        "title": "Ready to respond to your inquiries",
+        "description": "Automated response available 24/7 and a specialized team to serve you during business hours"
+      },
+      {
+        "icon": "feature2",
+        "title": "Vibrant Community",
+        "description": "Connect with fellow dreamers and doers who speak your language"
+      },
+      {
+        "icon": "feature3",
+        "title": "Expert Support",
+        "description": "Our team of experts is ready to answer your questions throughout working hours."
+      }
+    ]
+  }
+}
