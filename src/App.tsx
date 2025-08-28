@@ -9,8 +9,9 @@ export default function App() {
     <Routes>
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
+         <Route path="/home" element={<Home />} />
         <Route path="/Solution" element={<Solution />} />
-<Route path="/whyzid" element={<WhyZid />} />
+        <Route path="/whyzid" element={<WhyZid />} />
         {/* <Route path="/features" element={<FeaturesPage />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/contact" element={<Contact />} />  */}
