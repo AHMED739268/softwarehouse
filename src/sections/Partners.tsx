@@ -1,80 +1,63 @@
-import { useTranslation } from 'react-i18next';
-import { useEffect, useRef } from 'react';
-import './Partners.css'; // Import the CSS file for animations
-export default function Partners() {
-  const { t } = useTranslation();
-  const logos = [
-    'logo1.svg',
-    'logo2.svg',
-    'logo3.svg',
-    'logo4.svg',
-    'logo5.svg',
-    'logo6.svg',
-  ];
-  const sliderRef = useRef<HTMLDivElement>(null);
+import React, { useState } from "react";
 
-  useEffect(() => {
-    const slider = sliderRef.current;
-    if (!slider) return;
+const logos = [
+  {
+    alt: "Treat logo",
+    src: "https://zid-website.directus.app/assets/d8ba92ff-9e64-43c5-b61d-f31568f88b38",
+  },
+  {
+    alt: "Roshof logo",
+    src: "https://zid-website.directus.app/assets/011ede2a-4ac7-4f98-bcec-b25ab0230607",
+  },
+  {
+    alt: "Entaj logo",
+    src: "https://zid-website.directus.app/assets/2b8b660a-ff3d-4aba-9fd5-35aecf6fda27",
+  },
+  {
+    alt: "Qurmoz logo",
+    src: "https://zid-website.directus.app/assets/33bd27d2-0781-416d-971b-ec651685d6ae",
+  },
+  {
+    alt: "Black Night logo",
+    src: "https://zid-website.directus.app/assets/667901a6-162f-418c-9794-895d47b49e36",
+  },
+  {
+    alt: "Dokhon logo",
+    src: "https://zid-website.directus.app/assets/fe7eea54-744d-4939-8f94-5385a29d4dfb",
+  },
+];
 
-    // Pause on hover
-    const handleMouseEnter = () => {
-      slider.style.animationPlayState = 'paused';
-    };
-
-    const handleMouseLeave = () => {
-      slider.style.animationPlayState = 'running';
-    };
-
-    slider.addEventListener('mouseenter', handleMouseEnter);
-    slider.addEventListener('mouseleave', handleMouseLeave);
-
-    return () => {
-      slider.removeEventListener('mouseenter', handleMouseEnter);
-      slider.removeEventListener('mouseleave', handleMouseLeave);
-    };
-  }, []);
+export default function LogosList() {
+  const [paused, setPaused] = useState(false);
 
   return (
-    <section className="section bg-white">
-      <div className="container text-center" >
-        <h3 className="section-title" >{t('partners.title')}</h3>
-        <h3 className="section-title">{t('partners.Worldwide')}</h3>
-        {/* Logo Slider */}
-        <div
-          className="mt-8 overflow-hidden"
-          style={{ padding: '1rem 0' }}
-        >
-          <div
-            ref={sliderRef}
-            className="flex space-x-12 items-center py-4 logo-slider"
-            style={{
-              width: 'max-content',
-              animation: 'scroll 20s linear infinite',
-              animationTimingFunction: 'linear',
-              willChange: 'transform',
-            }}
+    <div
+      className="overflow-hidden w-full"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocus={() => setPaused(true)}
+      onBlur={() => setPaused(false)}
+    >
+      <ul
+        className="flex items-center gap-6 w-max animate-scroll"
+        style={{ animationPlayState: paused ? "paused" : "running" }}
+        role="list"
+      >
+        {/* نكرر اللوجوهات مرتين عشان نعمل loop */}
+        {[...logos, ...logos].map((logo, idx) => (
+          <li
+            key={idx}
+            className="w-auto aspect-[16/9] relative h-24 flex-shrink-0"
+            role="listitem"
           >
-            {/* Duplicate logos for seamless loop */}
-            {[
-              ...logos,
-              ...logos,
-            ].map((logo, i) => (
-              <div
-                key={i}
-                className="flex-shrink-0 w-32 opacity-70 hover:opacity-100 transition-opacity duration-300"
-              >
-                <img
-                  src={`/logos/${logo}`}
-                  alt={`partner-${i}`}
-                  className="h-10 mx-auto"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
+            <img
+              src={logo.src}
+              alt={logo.alt}
+              className="object-contain h-full w-full select-none pointer-events-none"
+            />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

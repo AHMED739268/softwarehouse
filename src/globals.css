@@ -15,19 +15,19 @@ body { @apply font-sans text-primary bg-white; }
 .section-sub { @apply text-grayDark max-w-2xl; }
 
 .card { @apply bg-white rounded-2xl shadow-soft p-6; }
-/* In global.css */
-/* @keyframes scroll {
+/*In global.css */
+@keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
-} */
+}
 
-.logo-slider {
+/* .animate-scroll {
   display: flex;
   width: max-content;
   animation: scroll 20s linear infinite;
-}
+} 
 
-.logo-slider:hover {
+ .animate-scroll:hover {
   animation-play-state: paused;
 }
 @keyframes scroll {
@@ -37,7 +37,7 @@ body { @apply font-sans text-primary bg-white; }
   100% {
     transform: translateX(-50%);
   }
-}
+}  */
 
 .image{
   width: 300px !important;
@@ -55,4 +55,17 @@ height: 200px !important;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
 }

@@ -12,7 +12,7 @@ const Header = () => {
 const navItems = [
   { label: "Solutions", href: "/solution" },
   { label: "Pricing", href: "/pricing" },
-  { label: "Why Zid?", href: "/why-zid" },
+  { label: "Why Zid?", href: "/whyzid" },
   { label: "How Zid Serves You?", href: "/how-zid-serves" },
   { label: "Enterprise", href: "/enterprise" },
   { label: "Resources", href: "/resources" },

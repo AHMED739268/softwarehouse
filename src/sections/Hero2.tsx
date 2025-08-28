@@ -1,7 +1,15 @@
 import { useState, useEffect } from 'react';
 import './Hero2.css';
+import { title } from 'framer-motion/client';
 
-const Hero2 = () => {
+interface Hero2Props {
+
+  title: string;
+  description: string;
+  buttonText: string;
+  image: string;
+}
+const Hero2 = (title:string,description:string,buttonText:string,image:string) => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -16,15 +24,15 @@ const Hero2 = () => {
   return (
     <section className="hero">
       <div className="hero-content">
-        <h1>TURN YOUR BIG IDEA INTO A THRIVING E-STORE</h1>
+        <h1>{title}</h1>
         <p>
-          New to e-commerce? Don’t sweat it. We’ve got everything you need to get started and expand with minimal costs.
+          {description}
         </p>
-        <button className="launch-btn">Launch Your Store</button>
+        <button className="launch-btn">{buttonText}</button>
       </div>
       <div className="hero-image-container">
         <img
-          src="./images/sol.png"
+          src={image}
           alt="E-commerce demo"
           className="hero-image"
           style={{ opacity }}

@@ -1,74 +1,19 @@
 import { useState, useEffect } from 'react';
 import { useSpring, animated } from '@react-spring/web';
+import { list } from 'postcss';
 
 interface Step {
   id: number;
   title: string;
-  description: string;
+  description: React.ReactNode;
   icon: JSX.Element;
 }
+interface GettingStartedProps {
+  steps: Step[];
+}
 
-const GettingStarted = () => {
-  const steps: Step[] = [
-    {
-      id: 1,
-      title: 'Create an Account',
-      description: 'Join the Zid family in just a few clicks.',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-          <circle cx="12" cy="7" r="4" />
-        </svg>
-      ),
-    },
-    {
-      id: 2,
-      title: 'Choose Your Plan',
-      description: 'Pick from Lite, Growth, or Pro – find what fits you best.',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <circle cx="12" cy="12" r="10" />
-          <path d="M12 8v4l2 2" />
-        </svg>
-      ),
-    },
-    {
-      id: 3,
-      title: 'Design Your Store',
-      description: 'Select a ready-made theme or go custom and make it yours.',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-          <line x1="3" y1="9" x2="21" y2="9" />
-          <line x1="9" y1="21" x2="9" y2="3" />
-        </svg>
-      ),
-    },
-    {
-      id: 4,
-      title: 'Add Your Products',
-      description: 'Show off what you’re selling in all their glory.',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-          <line x1="9" y1="9" x2="15" y2="9" />
-          <line x1="12" y1="6" x2="12" y2="12" />
-        </svg>
-      ),
-    },
-    {
-      id: 5,
-      title: 'Set Up Payments',
-      description: 'Connect the payment methods your customers love.',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-          <line x1="3" y1="9" x2="21" y2="9" />
-          <line x1="9" y1="21" x2="9" y2="3" />
-        </svg>
-      ),
-    },
-  ];
+const GettingStarted = ({steps}:GettingStartedProps) => {
+
 
   // Store visible state for each card
   const [visibleMap, setVisibleMap] = useState<{ [key: number]: boolean }>({});
@@ -158,7 +103,7 @@ const GettingStarted = () => {
                 aria-label={`Step ${step.id}: ${step.title}`}
               >
                 {/* Icon Container */}
-                <div className="bg-purple-100 h-14 w-14 rounded-full flex items-center justify-center text-purple-600 flex-shrink-0">
+                <div className="bg-purple-100 h-14 w-14  flex items-center justify-center text-purple-600 flex-shrink-0" style={{ borderRadius: '12px' }}>
                   {step.icon}
                 </div>
 
