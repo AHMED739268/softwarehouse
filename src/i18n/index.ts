@@ -17,13 +17,13 @@ i18n
 
 // Direction toggle on html element
 document.documentElement.lang = lang;
-document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+document.documentElement.dir = lang === 'ar' ? 'ltr' : 'ltr';
 
 export function switchLang(next: 'ar' | 'en') {
   i18n.changeLanguage(next);
   localStorage.setItem('lang', next);
   document.documentElement.lang = next;
-  document.documentElement.dir = next === 'ar' ? 'rtl' : 'ltr';
+  document.documentElement.dir = next === 'ar' ? 'ltr' : 'ltr';
 }
 
 export default i18n;
