@@ -12,23 +12,23 @@ import { IconKey } from 'utils/iconMap'
 export default function Home() {
   
 
-  const features =[
-      {
-        "icon": "feature1",
-        "title": "Ready to respond to your inquiries",
-        "description": "Automated response available 24/7 and a specialized team to serve you during business hours"
-      },
-      {
-        "icon": "feature2",
-        "title": "Vibrant Community",
-        "description": "Connect with fellow dreamers and doers who speak your language"
-      },
-      {
-        "icon": "feature3",
-        "title": "Expert Support",
-        "description": "Our team of experts is ready to answer your questions throughout working hours."
-      }
-    ]
+  // const features =[
+  //     {
+  //       "icon": "feature1",
+  //       "title": "Ready to respond to your inquiries",
+  //       "description": "Automated response available 24/7 and a specialized team to serve you during business hours"
+  //     },
+  //     {
+  //       "icon": "feature2",
+  //       "title": "Vibrant Community",
+  //       "description": "Connect with fellow dreamers and doers who speak your language"
+  //     },
+  //     {
+  //       "icon": "feature3",
+  //       "title": "Expert Support",
+  //       "description": "Our team of experts is ready to answer your questions throughout working hours."
+  //     }
+  //   ]
 
 
   return (
@@ -55,7 +55,7 @@ export default function Home() {
   <SuccessStories />
   <Features2 />
   <Features title="Empowering Businesses of All Shapes and Sizes" />
-<SupportSection
+{/* <SupportSection
   title="Here to Support Your Journey"
   subtitle="Whether you're just starting out or scaling up, our dedicated support team is here to help you every step of the way."
   features={features}
@@ -74,7 +74,7 @@ export default function Home() {
 
   paddingX="px-10 md:px-20"
   paddingY="pt-0 pb-20"
-/>
+/> */}
 
 
     </>
