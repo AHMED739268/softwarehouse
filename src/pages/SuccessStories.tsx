@@ -6,15 +6,63 @@ export default function SuccessStories() {
   const { t } = useTranslation();
 
   // Get translated testimonials
-  const testimonials = t('testimonials', { returnObjects: true }) as {
+  const testimonials = [
+    {
+      "name": "Ahmed Al-Subaie",
+      "company": "CMXA",
+      "rating": 2,
+      "logo": "/images/for-visionaries.jpg",
+      "avatar": "/images/for-visionaries.jpg",
+      "review": "Zid made many things easier and created communities and integrated solutions that make you not need any other platform. The Komksa store is stable, and we haven't faced any technical issues. We benefited from all of Zid's services, such as simple payment collection with Zid Pay, shipping to the Gulf countries with Zid Ship, sales analytics, and adding discounts and promo codes."
+    },
+    {
+      "name": "Dr. Khaled Al-Sultan",
+      "company": "Sama Pharma",
+      "rating": 5,
+      "logo": "/images/for-visionaries.jpg",
+      "avatar": "/images/for-visionaries.jpg",
+      "review": "We faced technical issues like payment processing failures, server instability, especially during promotions and discounts. Once we switched to Zid, all these problems disappeared, and we were able to focus on what really matters—operations and business."
+    },
+    {
+      "name": "Ahmed Al-Subaie",
+      "company": "CMXA",
+      "rating": 2,
+      "logo": "/images/for-visionaries.jpg",
+      "avatar": "/images/for-visionaries.jpg",
+      "review": "Zid made many things easier and created communities and integrated solutions that make you not need any other platform. The Komksa store is stable, and we haven't faced any technical issues. We benefited from all of Zid's services, such as simple payment collection with Zid Pay, shipping to the Gulf countries with Zid Ship, sales analytics, and adding discounts and promo codes."
+    },
+    {
+      "name": "Dr. Khaled Al-Sultan",
+      "company": "Sama Pharma",
+      "rating": 5,
+      "logo": "/images/for-visionaries.jpg",
+      "avatar": "/images/for-visionaries.jpg",
+      "review": "We faced technical issues like payment processing failures, server instability, especially during promotions and discounts. Once we switched to Zid, all these problems disappeared, and we were able to focus on what really matters—operations and business."
+    },
+    {
+      "name": "Ahmed Al-Subaie",
+      "company": "CMXA",
+      "rating": 2,
+      "logo": "/images/for-visionaries.jpg",
+      "avatar": "/images/for-visionaries.jpg",
+      "review": "Zid made many things easier and created communities and integrated solutions that make you not need any other platform. The Komksa store is stable, and we haven't faced any technical issues. We benefited from all of Zid's services, such as simple payment collection with Zid Pay, shipping to the Gulf countries with Zid Ship, sales analytics, and adding discounts and promo codes."
+    },
+    {
+      "name": "Dr. Khaled Al-Sultan",
+      "company": "Sama Pharma",
+      "rating": 5,
+      "logo": "/images/for-visionaries.jpg",
+      "avatar": "/images/for-visionaries.jpg",
+      "review": "We faced technical issues like payment processing failures, server instability, especially during promotions and discounts. Once we switched to Zid, all these problems disappeared, and we were able to focus on what really matters—operations and business."
+    }
+  ]as {
     name: string;
-    company: string;
+    company: string; 
     rating: number;
-    review: string;
-    avatar?: string;
     logo?: string;
+    avatar?: string;
+    review: string;
   }[];
-
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
