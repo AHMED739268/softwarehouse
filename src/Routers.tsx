@@ -8,10 +8,10 @@ export default function Routess() {
   return (
    <Routes>
       <Route element={<MainLayout />}>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Solution />} />
         {/* <Route index element={<Home />} />  */}
    
-        <Route path="/Solution" element={<Solution />} />
+        <Route path="/Solution" element={<Home />} />
         <Route path="/whyzid" element={<WhyZid />} />
         
       </Route>
