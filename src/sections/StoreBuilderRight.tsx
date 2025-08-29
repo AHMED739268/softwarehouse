@@ -44,12 +44,11 @@ const StoreBuilderRight = ({
 
           {/* Left Side: Text */}
           <motion.div
-            className="space-y-6"
-            style={{ paddingLeft: 100 }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-          >
+  className="space-y-6 pl-0 lg:pl-24"  
+  initial={{ opacity: 0, y: 30 }}
+  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+  transition={{ duration: 0.6, ease: 'easeOut' }}
+>
             <motion.h2
               className="text-3xl md:text-4xl font-bold text-purple-900 mb-6 leading-tight"
               initial={{ opacity: 0, y: 20 }}
