@@ -53,8 +53,8 @@ export default function Home() {
      
     />
   <SuccessStories />
-  <Features2 />
-  <Features title="Empowering Businesses of All Shapes and Sizes" />
+  {/* <Features2 />
+  <Features title="Empowering Businesses of All Shapes and Sizes" /> */}
 {/* <SupportSection
   title="Here to Support Your Journey"
   subtitle="Whether you're just starting out or scaling up, our dedicated support team is here to help you every step of the way."
