@@ -13,5 +13,5 @@
     "baseUrl": "./src",
     "strict": true
   },
-  "include": ["src"]
+  "include": ["src", "public/i18n"]
 }
