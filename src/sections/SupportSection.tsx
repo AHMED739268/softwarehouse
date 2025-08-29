@@ -9,7 +9,7 @@ interface Feature {
 interface SupportSectionProps {
   title: string;
   subtitle: string;
-  features: Feature[];
+  features?: Feature[];
   buttonText: string;
   backgroundColor?: string;
 
@@ -22,7 +22,7 @@ interface SupportSectionProps {
  export  const SupportSection = ({
   title,
   subtitle,
-  features,
+  features = [],
   buttonText,
   backgroundColor,
 
@@ -33,6 +33,7 @@ interface SupportSectionProps {
 }: SupportSectionProps) => {
   const baseClasses =
     "overflow-hidden rounded-3xl flex flex-col gap-16 w-full mx-auto";
+      const safeFeatures = Array.isArray(features) ? features : [];
   
   return (
     <section
@@ -58,7 +59,7 @@ interface SupportSectionProps {
 
             {/* Features */}
             <div className="space-y-4">
-              {features.map((feature, index) => {
+              {safeFeatures.map((feature, index) => {
                 const Icon = iconMap[feature.icon as keyof typeof iconMap];
                 return (
                   <div key={index}
