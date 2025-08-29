@@ -41,7 +41,7 @@ export default function Home() {
   <SuccessStories />
   <Features2 />
   <Features title="Empowering Businesses of All Shapes and Sizes" />
-<SupportSection
+{/* <SupportSection
   title={t("supportSection.title")}
   subtitle={t("supportSection.subtitle")}
   features={features}
@@ -60,7 +60,7 @@ export default function Home() {
 
   paddingX="px-10 md:px-20"
   paddingY="pt-0 pb-20"
-/>
+/> */}
 
 
     </>
