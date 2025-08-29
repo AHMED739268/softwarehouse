@@ -7,14 +7,13 @@ import WhyZid from './pages/whyzid'
 export default function Routess() {
   return (
    <Routes>
-      <Route element={<MainLayout />}>
+      
         <Route path="/" element={<Home />} />
         {/* <Route index element={<Home />} />  */}
    
         <Route path="/Solution" element={<Solution />} />
         <Route path="/whyzid" element={<WhyZid />} />
-        
-      </Route>
+
     </Routes>
   )
 }
