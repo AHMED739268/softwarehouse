@@ -36,7 +36,7 @@ export default function Home() {
       <Hero />
       <Partners />
       <Features title="Empowering Businesses of All Shapes and Sizes"/>
-      <StoreBuilder
+      {/* <StoreBuilder
       title="VERSATILE STORE BUILDER"
       description="Launch your dream store online or manage your physical spot with ease. No coding nightmares, we promise."
       buttonText="Build Your Empire"
@@ -52,7 +52,7 @@ export default function Home() {
       backgroundColor="#dddddd69"
      
     />
-  <SuccessStories />
+  <SuccessStories /> */}
   {/* <Features2 />
   <Features title="Empowering Businesses of All Shapes and Sizes" /> */}
 {/* <SupportSection
