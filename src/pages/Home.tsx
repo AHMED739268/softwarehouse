@@ -6,15 +6,15 @@ import Features2 from '../pages/FeaturesPage2'
 import StoreBuilder from '../sections/StoreBuilder'
 import StoreBuilderRight from '../sections/StoreBuilderRight'
 import SuccessStories from '../pages/SuccessStories'
-import {SupportSection} from '../sections/SupportSection';
+// import {SupportSection} from '../sections/SupportSection';
 import { IconKey } from 'utils/iconMap'
 
 export default function Home() {
-   const { t } = useTranslation();
+  //  const { t } = useTranslation();
 
-  const features = t("supportSection.features", {
-    returnObjects: true,
-  }) as { icon: IconKey; title: string; description: string }[];
+  // const features = t("supportSection.features", {
+  //   returnObjects: true,
+  // }) as { icon: IconKey; title: string; description: string }[];
 
 
   return (
