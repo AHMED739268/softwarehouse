@@ -9,7 +9,28 @@ export default function Features({ title }: FeaturesProps) {
   const { t } = useTranslation();
 
   // Get translated features
-  const translatedFeatures = t('featuress', { returnObjects: true }) as {
+  const translatedFeatures = [
+    {
+      "key": "visionary",
+      "title": "For the Visionaries with Big Ideas",
+      "description": "Got a million-dollar idea? Let’s make it happen. No tech skills needed—bring your passion, and we’ll support you every step of the way."
+    },
+    {
+      "key": "local",
+      "title": "For the Local Heroes",
+      "description": "Ready to take your physical store to the next level? Whether you're running a chic boutique, a buzzing bazaar stall, or a pop-up shop, we've got the secret sauce for your success."
+    },
+    {
+      "key": "pioneer",
+      "title": "For the Online Pioneers",
+      "description": "Launch and grow your e-commerce empire with our digital toolbox. World domination? Let's start with a great online store."
+    },
+    {
+      "key": "superstar",
+      "title": "For the Scaling Superstars",
+      "description": "Ready to leave the competition in the dust? Our advanced tools and expert support will be your rocket fuel at every stage."
+    }
+  ] as {
     key: string;
     title: string;
     description: string;
