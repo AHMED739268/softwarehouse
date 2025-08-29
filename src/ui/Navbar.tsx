@@ -1,22 +1,20 @@
 import { useState, useEffect, useRef } from "react";
+import { Menu, X } from "lucide-react"; // أيقونات
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<
-    null | "solutions" | "whyZid" | "howServes" | "resources"
-  >(null);
   const [language, setLanguage] = useState<"EN" | "AR">("EN");
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
-const navItems = [
-  { label: "Solutions", href: "/solution" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Why Zid?", href: "/whyzid" },
-  { label: "How Zid Serves You?", href: "/how-zid-serves" },
-  { label: "Enterprise", href: "/enterprise" },
-  { label: "Resources", href: "/resources" },
-];
+  const navItems = [
+    { label: "Solutions", href: "/solution" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "Why Zid?", href: "/whyzid" },
+    { label: "How Zid Serves You?", href: "/how-zid-serves" },
+    { label: "Enterprise", href: "/enterprise" },
+    { label: "Resources", href: "/resources" },
+  ];
+
   // Detect scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -25,25 +23,6 @@ const navItems = [
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  // Close dropdowns when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      Object.entries(dropdownRefs.current).forEach(([key, ref]) => {
-        if (ref && !ref.contains(event.target as Node)) {
-          setOpenDropdown((prev) => (prev === key ? null : prev));
-        }
-      });
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  const toggleDropdown = (
-    dropdown: "solutions" | "whyZid" | "howServes" | "resources"
-  ) => {
-    setOpenDropdown(openDropdown === dropdown ? null : dropdown);
-  };
 
   const toggleLanguage = () => {
     setLanguage((lang) => (lang === "EN" ? "AR" : "EN"));
@@ -77,33 +56,31 @@ const navItems = [
             <span
               className={`ml-2 text-xl font-bold transition-colors ${
                 isScrolled ? "text-purple-900" : "text-white"
-              }` }
-           >
-            <a href="/"> zid</a>  
+              }`}
+            >
+              <a href="/">zid</a>
             </span>
           </div>
 
-          {/* Navigation */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {navItems.map(
-              (item, index) => (
-                <a
-                  key={index}
-                  href={item.href}
-                  className={`text-sm font-medium transition-colors ${
-                    isScrolled
-                      ? "text-purple-900 hover:text-purple-700"
-                      : "text-white hover:text-purple-200"
-                  }`}
-                >
-                  {item.label}
-                </a>
-              )
-            )}
+            {navItems.map((item, index) => (
+              <a
+                key={index}
+                href={item.href}
+                className={`text-sm font-medium transition-colors ${
+                  isScrolled
+                    ? "text-purple-900 hover:text-purple-700"
+                    : "text-white hover:text-purple-200"
+                }`}
+              >
+                {item.label}
+              </a>
+            ))}
           </nav>
 
-          {/* Right Side */}
-          <div className="flex items-center space-x-4">
+          {/* Right Side (Desktop) */}
+          <div className="hidden md:flex items-center space-x-4">
             <button
               onClick={toggleLanguage}
               className={`text-sm font-medium transition-colors ${
@@ -134,8 +111,51 @@ const navItems = [
               Create a store
             </button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className={`p-2 rounded-md ${
+                isScrolled ? "text-purple-900" : "text-white"
+              }`}
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-white shadow-lg">
+          <div className="px-4 pt-4 pb-6 space-y-4">
+            {navItems.map((item, index) => (
+              <a
+                key={index}
+                href={item.href}
+                className="block text-purple-900 font-medium hover:text-purple-700"
+              >
+                {item.label}
+              </a>
+            ))}
+            <div className="flex flex-col space-y-2 pt-4 border-t">
+              <button
+                onClick={toggleLanguage}
+                className="text-purple-900 font-medium hover:text-purple-700"
+              >
+                {language === "EN" ? "AR" : "EN"}
+              </button>
+              <button className="border border-purple-900 text-purple-900 font-medium rounded-full px-4 py-2 hover:bg-purple-50">
+                Login
+              </button>
+              <button className="bg-purple-900 text-white font-medium rounded-full px-6 py-2 hover:bg-purple-800">
+                Create a store
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
