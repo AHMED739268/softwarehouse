@@ -69,3 +69,35 @@
 }
 
 /* Use JavaScript to animate transform too */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column; /* خلي العناصر فوق بعض */
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .hero-content {
+    order: 2; /* النص تحت */
+    padding: 0;
+  }
+
+  .hero-image-container {
+    order: 1; /* الصورة فوق */
+    width: 100%;
+  }
+
+  .hero-image {
+    padding-top: 40px;
+    max-width: 80%; /* خلي الصورة تكبر */
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    color: #fff;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
