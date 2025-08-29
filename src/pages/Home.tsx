@@ -1,7 +1,7 @@
 import Hero from '../sections/Hero'
 import Partners from '../sections/Partners'
 
-// import Features from '../pages/FeaturesPage'
+import Features from '../pages/FeaturesPage'
 // import Features2 from '../pages/FeaturesPage2'
 // import StoreBuilder from '../sections/StoreBuilder'
 // import StoreBuilderRight from '../sections/StoreBuilderRight'
@@ -35,7 +35,7 @@ export default function Home() {
     <>
        <Hero />
       <Partners />
-      {/* <Features title="Empowering Businesses of All Shapes and Sizes"/>   */}
+      <Features title="Empowering Businesses of All Shapes and Sizes"/>  
       {/* <StoreBuilder
       title="VERSATILE STORE BUILDER"
       description="Launch your dream store online or manage your physical spot with ease. No coding nightmares, we promise."
