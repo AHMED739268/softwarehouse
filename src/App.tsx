@@ -8,13 +8,12 @@ export default function App() {
   return (
     <Routes>
       <Route element={<MainLayout />}>
-        <Route path="/" element={<Home />} />
-         <Route path="/home" element={<Home />} />
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route index element={<Home />} /> 
+   
         <Route path="/Solution" element={<Solution />} />
         <Route path="/whyzid" element={<WhyZid />} />
-        {/* <Route path="/features" element={<FeaturesPage />} />
-        <Route path="/pricing" element={<PricingPage />} />
-        <Route path="/contact" element={<Contact />} />  */}
+        
       </Route>
     </Routes>
   )
