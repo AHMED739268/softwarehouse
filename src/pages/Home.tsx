@@ -1,5 +1,5 @@
 import Hero from '../sections/Hero'
-// import Partners from '../sections/Partners'
+import Partners from '../sections/Partners'
 
 // import Features from '../pages/FeaturesPage'
 // import Features2 from '../pages/FeaturesPage2'
@@ -34,8 +34,8 @@ export default function Home() {
   return (
     <>
        <Hero />
-      {/* <Partners />
-      <Features title="Empowering Businesses of All Shapes and Sizes"/>  */}
+      <Partners />
+      {/* <Features title="Empowering Businesses of All Shapes and Sizes"/>   */}
       {/* <StoreBuilder
       title="VERSATILE STORE BUILDER"
       description="Launch your dream store online or manage your physical spot with ease. No coding nightmares, we promise."
