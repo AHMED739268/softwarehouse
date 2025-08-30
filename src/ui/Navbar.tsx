@@ -1,19 +1,19 @@
 import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react"; // أيقونات
-
+import { useTranslation } from 'react-i18next';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [language, setLanguage] = useState<"EN" | "AR">("EN");
+  const { t, i18n } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const navItems = [
-    { label: "Solutions", href: "/solution" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "Why Zid?", href: "/whyzid" },
-    { label: "How Zid Serves You?", href: "/how-zid-serves" },
-    { label: "Enterprise", href: "/enterprise" },
-    { label: "Resources", href: "/resources" },
-  ];
+const navItems = [
+  { label: t("nav.solutions"), href: "/solution" },
+  { label: t("nav.pricing"), href: "/pricing" },
+  { label: t("nav.whyzid"), href: "/whyzid" },
+  { label: t("nav.howzid"), href: "/how-zid-serves" },
+  { label: t("nav.enterprise"), href: "/enterprise" },
+  { label: t("nav.resources"), href: "/resources" },
+];
 
   // Detect scroll
   useEffect(() => {
@@ -24,8 +24,14 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleLanguage = () => {
-    setLanguage((lang) => (lang === "EN" ? "AR" : "EN"));
+  const language = i18n.language === 'en' ? 'EN' : 'AR';
+  
+  const isRTL = i18n.language === "ar" || i18n.language === "he";
+const toggleLanguage = () => {
+    const newLang = i18n.language === 'en' ? 'ar' : 'en';
+    i18n.changeLanguage(newLang);
+    localStorage.setItem('lang', newLang);
+    document.dir = newLang === 'ar' ? 'rtl' : 'ltr';
   };
 
   return (
@@ -89,7 +95,8 @@ const Header = () => {
                   : "text-white hover:text-purple-200"
               }`}
               aria-label={`Switch to ${language === "EN" ? "AR" : "EN"}`}
-            >
+           style={{paddingLeft: isRTL ? '0.5rem' : '0',}}
+           >
               {language === "EN" ? "AR" : "EN"}
             </button>
             <button
@@ -99,7 +106,7 @@ const Header = () => {
                   : "text-white border-white hover:bg-purple-200 hover:text-purple-900"
               }`}
             >
-              Login
+             {t("buttons.login")}
             </button>
             <button
               className={`text-sm font-medium rounded-full px-6 py-2 transition-colors ${
@@ -108,7 +115,7 @@ const Header = () => {
                   : "text-purple-900 bg-white hover:bg-gray-200"
               }`}
             >
-              Create a store
+              {t("buttons.createStore")}
             </button>
           </div>
 
@@ -147,10 +154,10 @@ const Header = () => {
                 {language === "EN" ? "AR" : "EN"}
               </button>
               <button className="border border-purple-900 text-purple-900 font-medium rounded-full px-4 py-2 hover:bg-purple-50">
-                Login
+               {t("buttons.login")}
               </button>
               <button className="bg-purple-900 text-white font-medium rounded-full px-6 py-2 hover:bg-purple-800">
-                Create a store
+                {t("buttons.createStore")}
               </button>
             </div>
           </div>
