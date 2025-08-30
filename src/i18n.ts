@@ -1,6 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
+import { footer } from 'framer-motion/client';
 // import { FaParagraph } from 'react-icons/fa';
 i18n
     .use(LanguageDetector)
@@ -159,7 +160,80 @@ i18n
                                 "description": "Work with specialists dedicated to your success."
                             }
                         ]
+                    },
+                    footer:{
+                    cta: {
+                        "title": "YOUR ENTREPRENEURIAL ADVENTURE STARTS HERE. LET'S BUILD!",
+                        "description": "Whether you're just starting out, looking to level up, or ready to take over the world, Zid has the tools, support, and community to help you crush your goals.",
+                        "highlight": "Sellers are 250% more likely to succeed with Zid",
+                        "button": "Get Started Now"
+                    },
+                    sections: {
+                        "solutions": {
+                            "title": "SOLUTIONS",
+                            "items": {
+                                "estore": "E-store",
+                                "pos": "POS (Point of Sales)",
+                                "payments": "Payments",
+                                "shipping": "Shipping",
+                                "inventory": "Inventory Management",
+                                "apps": "Apps",
+                                "themes": "Themes",
+                                "mazeed": "Mazeed Marketplace",
+                                "financing": "Financing",
+                                "marketing": "Marketing Tools"
+                            }
+                        },
+                        "why": {
+                            "title": "WHY ZID",
+                            "items": {
+                                "start": "Why start with Zid?",
+                                "move": "Why move to Zid?",
+                                "expand": "Why Expand with Zid?",
+                                "pricing": "Pricing"
+                            }
+                        },
+                        "serve": {
+                            "title": "HOW ZID SERVES YOU",
+                            "items": {
+                                "small": "Small Business",
+                                "medium": "Medium Business",
+                                "large": "Large Business",
+                                "enterprise": "Enterprise",
+                                "product": "By Product",
+                                "manager": "Store Manager",
+                                "finance": "Financial team",
+                                "operation": "Operation team",
+                                "marketing": "Marketing Team",
+                                "partners": "Partners & Developers"
+                            }
+                        },
+                        "resources": {
+                            "title": "RESOURCES",
+                            "items": {
+                                "enablement": "Merchants Enablement",
+                                "community": "Merchants Community",
+                                "blog": "Blog",
+                                "academy": "Zid Academy",
+                                "brand": "Brand Guidelines"
+                            }
+                        },
+                        "support": {
+                            "title": "SUPPORT",
+                            "items": {
+                                "help": "Help Center",
+                                "new": "What's New",
+                                "terms": "Terms & Conditions",
+                                "privacy": "Privacy Policy",
+                                "complaints": "Complaints and Suggestions"
+                            }
+                        }
+                    },
+                    bottom: {
+                        "cr": "© Zid 2025 Commercial Registration Number 1010365366",
+                        "vat": "VAT Number 300827827900003"
                     }
+                }
                 },
             },
 
@@ -315,7 +389,80 @@ i18n
                                 "description": "اعمل مع متخصصين مكرسين لنجاحك."
                             }
                         ]
+                    },
+                    footer:{
+                    cta: {
+                        "title": "مغامرتك الريادية تبدأ هنا. لنبدأ البناء!",
+                        "description": "سواء كنت تبدأ الآن، أو تبحث عن التوسع، أو جاهز للسيطرة على السوق، زد توفر لك الأدوات والدعم والمجتمع لتحقيق أهدافك.",
+                        "highlight": "البائعون أكثر عرضة للنجاح بنسبة 250٪ مع زد",
+                        "button": "ابدأ الآن"
+                    },
+                    sections: {
+                        "solutions": {
+                            "title": "الحلول",
+                            "items": {
+                                "estore": "المتجر الإلكتروني",
+                                "pos": "نقاط البيع",
+                                "payments": "المدفوعات",
+                                "shipping": "الشحن",
+                                "inventory": "إدارة المخزون",
+                                "apps": "التطبيقات",
+                                "themes": "القوالب",
+                                "mazeed": "سوق مزيد",
+                                "financing": "التمويل",
+                                "marketing": "أدوات التسويق"
+                            }
+                        },
+                        "why": {
+                            "title": "لماذا زد",
+                            "items": {
+                                "start": "لماذا تبدأ مع زد؟",
+                                "move": "لماذا تنتقل إلى زد؟",
+                                "expand": "لماذا تتوسع مع زد؟",
+                                "pricing": "الأسعار"
+                            }
+                        },
+                        "serve": {
+                            "title": "كيف نخدمك في زد",
+                            "items": {
+                                "small": "الأعمال الصغيرة",
+                                "medium": "الأعمال المتوسطة",
+                                "large": "الأعمال الكبيرة",
+                                "enterprise": "المؤسسات",
+                                "product": "حسب المنتج",
+                                "manager": "مدير المتجر",
+                                "finance": "فريق المالية",
+                                "operation": "فريق العمليات",
+                                "marketing": "فريق التسويق",
+                                "partners": "الشركاء والمطورين"
+                            }
+                        },
+                        "resources": {
+                            "title": "الموارد",
+                            "items": {
+                                "enablement": "تمكين التجار",
+                                "community": "مجتمع التجار",
+                                "blog": "المدونة",
+                                "academy": "أكاديمية زد",
+                                "brand": "إرشادات الهوية"
+                            }
+                        },
+                        "support": {
+                            "title": "الدعم",
+                            "items": {
+                                "help": "مركز المساعدة",
+                                "new": "ما الجديد",
+                                "terms": "الشروط والأحكام",
+                                "privacy": "سياسة الخصوصية",
+                                "complaints": "الشكاوى والاقتراحات"
+                            }
+                        }
+                    },
+                    bottom: {
+                        "cr": "© زد 2025 رقم السجل التجاري 1010365366",
+                        "vat": "الرقم الضريبي 300827827900003"
                     }
+                }
                 },
             },
         },
