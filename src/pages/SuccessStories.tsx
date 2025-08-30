@@ -1,68 +1,21 @@
-import { useTranslation } from 'react-i18next';
-import { useState, useRef } from 'react';
-import TestimonialCard from '../sections/TestimonialCard';
+import { useTranslation } from "react-i18next";
+import { useState, useRef } from "react";
+import TestimonialCard from "../sections/TestimonialCard";
 
 export default function SuccessStories() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === "ar" || i18n.language === "he";
 
-  // Get translated testimonials
-  const testimonials = [
-    {
-      "name": "Ahmed Al-Subaie",
-      "company": "CMXA",
-      "rating": 2,
-      "logo": "/images/for-visionaries.jpg",
-      "avatar": "/images/for-visionaries.jpg",
-      "review": "Zid made many things easier and created communities and integrated solutions that make you not need any other platform. The Komksa store is stable, and we haven't faced any technical issues. We benefited from all of Zid's services, such as simple payment collection with Zid Pay, shipping to the Gulf countries with Zid Ship, sales analytics, and adding discounts and promo codes."
-    },
-    {
-      "name": "Dr. Khaled Al-Sultan",
-      "company": "Sama Pharma",
-      "rating": 5,
-      "logo": "/images/for-visionaries.jpg",
-      "avatar": "/images/for-visionaries.jpg",
-      "review": "We faced technical issues like payment processing failures, server instability, especially during promotions and discounts. Once we switched to Zid, all these problems disappeared, and we were able to focus on what really matters—operations and business."
-    },
-    {
-      "name": "Ahmed Al-Subaie",
-      "company": "CMXA",
-      "rating": 2,
-      "logo": "/images/for-visionaries.jpg",
-      "avatar": "/images/for-visionaries.jpg",
-      "review": "Zid made many things easier and created communities and integrated solutions that make you not need any other platform. The Komksa store is stable, and we haven't faced any technical issues. We benefited from all of Zid's services, such as simple payment collection with Zid Pay, shipping to the Gulf countries with Zid Ship, sales analytics, and adding discounts and promo codes."
-    },
-    {
-      "name": "Dr. Khaled Al-Sultan",
-      "company": "Sama Pharma",
-      "rating": 5,
-      "logo": "/images/for-visionaries.jpg",
-      "avatar": "/images/for-visionaries.jpg",
-      "review": "We faced technical issues like payment processing failures, server instability, especially during promotions and discounts. Once we switched to Zid, all these problems disappeared, and we were able to focus on what really matters—operations and business."
-    },
-    {
-      "name": "Ahmed Al-Subaie",
-      "company": "CMXA",
-      "rating": 2,
-      "logo": "/images/for-visionaries.jpg",
-      "avatar": "/images/for-visionaries.jpg",
-      "review": "Zid made many things easier and created communities and integrated solutions that make you not need any other platform. The Komksa store is stable, and we haven't faced any technical issues. We benefited from all of Zid's services, such as simple payment collection with Zid Pay, shipping to the Gulf countries with Zid Ship, sales analytics, and adding discounts and promo codes."
-    },
-    {
-      "name": "Dr. Khaled Al-Sultan",
-      "company": "Sama Pharma",
-      "rating": 5,
-      "logo": "/images/for-visionaries.jpg",
-      "avatar": "/images/for-visionaries.jpg",
-      "review": "We faced technical issues like payment processing failures, server instability, especially during promotions and discounts. Once we switched to Zid, all these problems disappeared, and we were able to focus on what really matters—operations and business."
-    }
-  ]as {
+  // Load testimonials from i18n
+  const testimonials = t("successStories.testimonials", { returnObjects: true }) as {
     name: string;
-    company: string; 
+    company: string;
     rating: number;
     logo?: string;
     avatar?: string;
     review: string;
   }[];
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -94,15 +47,9 @@ export default function SuccessStories() {
     }
   };
 
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
+  const handleMouseUp = () => setIsDragging(false);
+  const handleMouseLeave = () => setIsDragging(false);
 
-  const handleMouseLeave = () => {
-    setIsDragging(false);
-  };
-
-  // Get current and next item
   const current = testimonials[currentIndex];
   const nextIndex = (currentIndex + 1) % testimonials.length;
   const nextItem = testimonials[nextIndex];
@@ -112,9 +59,9 @@ export default function SuccessStories() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-purple-900">
-            FROM DREAM TO REALITY,<br />READ OUR SUCCESS STORIES
+            {t("successStories.title")}
           </h2>
-          <div className="flex space-x-2">
+          <div className="flex space-x-2" dir={isRTL ? "ltr" : "ltr"}>
             <button
               onClick={prev}
               className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-300"
@@ -136,7 +83,6 @@ export default function SuccessStories() {
           </div>
         </div>
 
-      
         <div
           ref={containerRef}
           className="relative"
@@ -144,31 +90,14 @@ export default function SuccessStories() {
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseLeave}
-          style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+          style={{ cursor: isDragging ? "grabbing" : "grab" }}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-           
             <div className="w-full">
-              <TestimonialCard
-                name={current.name}
-                company={current.company}
-                rating={current.rating}
-                review={current.review}
-                avatar={current.avatar || `/images/avatar-${currentIndex + 1}.jpg`}
-                logo={current.logo || `/images/logo-${currentIndex + 1}.png`}
-              />
+              <TestimonialCard {...current} />
             </div>
-
-           
             <div className="hidden md:block">
-              <TestimonialCard
-                name={nextItem.name}
-                company={nextItem.company}
-                rating={nextItem.rating}
-                review={nextItem.review}
-                avatar={nextItem.avatar || `/images/avatar-${nextIndex + 1}.jpg`}
-                logo={nextItem.logo || `/images/logo-${nextIndex + 1}.png`}
-              />
+              <TestimonialCard {...nextItem} />
             </div>
           </div>
         </div>

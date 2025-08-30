@@ -7,69 +7,75 @@ import StoreBuilder from '../sections/StoreBuilder'
 import StoreBuilderRight from '../sections/StoreBuilderRight'
 import SuccessStories from '../pages/SuccessStories'
 import {SupportSection} from '../sections/SupportSection';
+import { useTranslation } from 'react-i18next';
 import { IconKey } from 'utils/iconMap'
 
 export default function Home() {
   
+  const { t } = useTranslation();
+  const featuresRaw = t("supportSection.features", { returnObjects: true });
+  
+  const features = Array.isArray(featuresRaw) ? featuresRaw : [];
+    const featuresRaw2 = t("supportSection2.features", { returnObjects: true });
+  
+  const features2 = Array.isArray(featuresRaw2) ? featuresRaw2 : [];
 
-  const features =[
-      {
-        "icon": "feature1",
-        "title": "Ready to respond to your inquiries",
-        "description": "Automated response available 24/7 and a specialized team to serve you during business hours"
-      },
-      {
-        "icon": "feature2",
-        "title": "Vibrant Community",
-        "description": "Connect with fellow dreamers and doers who speak your language"
-      },
-      {
-        "icon": "feature3",
-        "title": "Expert Support",
-        "description": "Our team of experts is ready to answer your questions throughout working hours."
-      }
-    ]
 
 
   return (
     <>
        <Hero />
       <Partners />
-      <Features title="Empowering Businesses of All Shapes and Sizes"/>  
+     <Features
+  title={t("features.title")}
+  features={[
+    { key: "visionary" },
+    { key: "local" },
+    { key: "pioneer" },
+    { key: "superstar" }
+  ]}
+/>
       <StoreBuilder
-      title="VERSATILE STORE BUILDER"
-      description="Launch your dream store online or manage your physical spot with ease. No coding nightmares, we promise."
-      buttonText="Build Your Empire"
-      image='/images/for-visionaries.jpg'
-      backgroundColor="#ffffffff"
-    
-    />
-         <StoreBuilderRight
-      title="VERSATILE STORE BUILDER"
-      description="Launch your dream store online or manage your physical spot with ease. No coding nightmares, we promise."
-      buttonText="Build Your Empire"
-      image='/images/for-visionaries.jpg'
-      backgroundColor="#dddddd69"
-     
-    />
+  title={t("storeBuilder.title")}
+  description={t("storeBuilder.description")}
+  buttonText={t("storeBuilder.button")}
+  image='/images/for-visionaries.jpg'
+  backgroundColor="#ffffffff"
+/>
+       <StoreBuilderRight
+  title={t("storeBuilderRight.title")}
+  description={t("storeBuilderRight.description")}
+  buttonText={t("storeBuilderRight.button")}
+  image='/images/for-visionaries.jpg'
+  backgroundColor="#dddddd69"
+/>
   <SuccessStories />
   <Features2 />
-  <Features title="Empowering Businesses of All Shapes and Sizes" />
+   <Features
+  title={t("features.title2")}
+  features={[
+    { key: "allInOne" },
+    { key: "merchantGrowth" },
+    { key: "community" },
+    { key: "partners" }
+  ]}
+/>
+
 <SupportSection
-  title="Here to Support Your Journey"
-  subtitle="Whether you're just starting out or scaling up, our dedicated support team is here to help you every step of the way."
+  title={t("supportSection.title")}
+  subtitle={t("supportSection.subtitle")}
   features={features}
-  buttonText="Contact Support"
+  buttonText={t("supportSection.button")}
   backgroundColor="#B368F5"
 
   paddingX="px-10 md:px-20"
   paddingY="pt-20 pb-5"
 />
 <SupportSection
-  title="Here to Support Your Journey"
-  subtitle="Whether you're just starting out or scaling up, our dedicated support team is here to help you every step of the way."
-  features={features}
-  buttonText="Contact Support"
+  title={t("supportSection2.title")}
+  subtitle={t("supportSection2.subtitle")}
+  features={features2}
+  buttonText={t("supportSection2.button")}
   backgroundColor="#aeaeaeff"
 
   paddingX="px-10 md:px-20"

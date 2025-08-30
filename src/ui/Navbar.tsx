@@ -8,7 +8,7 @@ const Header = () => {
 
 const navItems = [
   { label: t("nav.solutions"), href: "/solution" },
-  { label: t("nav.pricing"), href: "/pricing" },
+  { label: t("nav.pricing"), href: "/solution" },
   { label: t("nav.whyzid"), href: "/whyzid" },
   { label: t("nav.howzid"), href: "/how-zid-serves" },
   { label: t("nav.enterprise"), href: "/enterprise" },

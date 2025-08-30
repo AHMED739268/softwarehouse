@@ -1,7 +1,16 @@
 import Routess from './Routers'
-export default function App() {
-  return (
- <Routess />
+import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
-  )
+export default function App() {
+  const { i18n } = useTranslation(); 
+
+  useEffect(() => {
+    const currentLang = i18n.language || localStorage.getItem("lang") || "en";
+    document.dir = currentLang === "ar" ? "rtl" : "ltr";
+  }, [i18n.language]);
+
+  return (
+    <Routess />
+  );
 }

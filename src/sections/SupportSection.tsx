@@ -1,5 +1,6 @@
-import { iconMap } from "../utils/iconMap";
 
+import { iconMap } from "../utils/iconMap";
+import { useTranslation } from "react-i18next";
 interface Feature {
   icon: string;
   title: string;
@@ -34,7 +35,8 @@ export const SupportSection = ({
   const baseClasses =
     "overflow-hidden rounded-3xl flex flex-col gap-12 md:gap-16 w-full mx-auto";
   const safeFeatures = Array.isArray(features) ? features : [];
-
+  const { i18n } = useTranslation();
+ const isRTL = i18n.language === "ar" || i18n.language === "he";
   return (
     <section
       className={`${baseClasses} ${paddingX} ${paddingY} ${paddingTop} ${paddingBottom}`}
@@ -72,7 +74,7 @@ export const SupportSection = ({
                   <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 bg-purple-500 rounded-lg flex items-center justify-center mr-3 sm:mr-4">
                     {Icon && <Icon className="w-5 h-5 text-white" />}
                   </div>
-                  <div>
+                  <div style={{textAlign: isRTL ? 'right' : 'left',  paddingRight: isRTL ? '1rem' : 0}}>
                     <h3
                       className="font-semibold text-purple-900 text-start text-sm sm:text-base"
                     >

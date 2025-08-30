@@ -1,40 +1,17 @@
 import { useTranslation } from 'react-i18next';
 import FeatureCard from '../sections/FeatureCard';
 
-type FeaturesProps = {
-  title: string;
+type Feature = {
+  key: string;
 };
 
-export default function Features({ title }: FeaturesProps) {
-  const { t } = useTranslation();
+type FeaturesProps = {
+  title: string;
+  features: Feature[]; 
+};
 
-  // Get translated features
-  const translatedFeatures = [
-    {
-      "key": "visionary",
-      "title": "For the Visionaries with Big Ideas",
-      "description": "Got a million-dollar idea? Let’s make it happen. No tech skills needed—bring your passion, and we’ll support you every step of the way."
-    },
-    {
-      "key": "local",
-      "title": "For the Local Heroes",
-      "description": "Ready to take your physical store to the next level? Whether you're running a chic boutique, a buzzing bazaar stall, or a pop-up shop, we've got the secret sauce for your success."
-    },
-    {
-      "key": "pioneer",
-      "title": "For the Online Pioneers",
-      "description": "Launch and grow your e-commerce empire with our digital toolbox. World domination? Let's start with a great online store."
-    },
-    {
-      "key": "superstar",
-      "title": "For the Scaling Superstars",
-      "description": "Ready to leave the competition in the dust? Our advanced tools and expert support will be your rocket fuel at every stage."
-    }
-  ] as {
-    key: string;
-    title: string;
-    description: string;
-  }[];
+export default function Features({ title, features }: FeaturesProps) {
+  const { t } = useTranslation();
 
   // Map keys to image paths
   const imageMap: Record<string, string> = {
@@ -42,26 +19,29 @@ export default function Features({ title }: FeaturesProps) {
     local: '/images/for-visionaries.jpg',
     pioneer: '/images/for-visionaries.jpg',
     superstar: '/images/for-visionaries.jpg',
+    allInOne: '/images/whyzid.jpg',
+    merchantGrowth: '/images/whyzid.jpg',
+    community: '/images/whyzid.jpg',
+    partners: '/images/whyzid.jpg',
   };
 
   return (
     <section className="py-16 bg-gray-50">
-<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',marginBottom: 40 }}>
-  <h1 className="section-title" style={{ width: 460, textAlign: 'center' }}>
-    {title}
-  </h1>
-</div>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: 40 }}>
+        <h1 className="section-title" style={{ width: 460, textAlign: 'center' }}>
+          {title}
+        </h1>
+      </div>
 
-      <div className="  mx-auto px-4 sm:px-6 lg:px-8" style={{paddingLeft:55 }}>
+      <div className="mx-auto px-4 sm:px-6 lg:px-8" style={{ paddingLeft: 55 }}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-16">
-         
-          {translatedFeatures.map((feature) => {
+          {features.map((feature) => {
             const imagePath = imageMap[feature.key] || '/images/default.jpg';
             return (
               <FeatureCard
                 key={feature.key}
-                title={feature.title}
-                description={feature.description}
+                title={t(`features.${feature.key}.title`)}
+                description={t(`features.${feature.key}.description`)}
                 image={imagePath}
               />
             );

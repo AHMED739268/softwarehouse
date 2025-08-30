@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import { useTranslation } from 'react-i18next';
 interface TestimonialProps {
   name: string;
   company: string;
@@ -10,6 +10,8 @@ interface TestimonialProps {
 }
 
 const TestimonialCard = ({ name, company, rating, review, avatar, logo }: TestimonialProps) => {
+  const { i18n } = useTranslation();
+   const isRTL = i18n.language === "ar" || i18n.language === "he";
   return (
     <div className="bg-gray-50 p-6 rounded-xl shadow-sm border border-gray-200">
       {/* Rating */}
@@ -35,7 +37,7 @@ const TestimonialCard = ({ name, company, rating, review, avatar, logo }: Testim
           {logo && (
             <img src={logo} alt="Logo" className="w-8 h-8 " />
           )}
-          <div>
+          <div style={{paddingRight: isRTL ? '0.75rem' : '0'}}>
             <h4 className="font-semibold text-gray-900">{name}</h4>
             <p className="text-sm text-gray-600">{company}</p>
           </div>

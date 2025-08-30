@@ -1,5 +1,6 @@
+import { i } from "framer-motion/client";
 import React, { useState } from "react";
-
+import { useTranslation } from "react-i18next";
 const logos = [
   {
     alt: "Treat logo",
@@ -29,7 +30,8 @@ const logos = [
 
 export default function LogosList() {
   const [paused, setPaused] = useState(false);
-
+  const { i18n } = useTranslation();
+ const isRTL = i18n.language === "ar" || i18n.language === "he";
   return (
     <div
       className="overflow-hidden w-full"
@@ -37,6 +39,7 @@ export default function LogosList() {
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
+      dir={isRTL ? "ltr" : "ltr"}
     >
       <ul
         className="flex items-center gap-6 w-max animate-scroll"
